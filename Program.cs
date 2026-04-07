@@ -17,4 +17,10 @@ if (args.Length > 0 && args[0] == "--diagnostics")
     return;
 }
 
+if (args.Length > 0 && args[0] == "--walltime")
+{
+    WallTimeComparison.Run(connectionString);
+    return;
+}
+
 BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
